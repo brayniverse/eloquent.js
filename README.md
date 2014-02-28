@@ -21,6 +21,18 @@ function Person() {
 AR.Resource.add('people', Person);
 ```
 
+A slightly different syntax currently in beta that will deprecate the previously documented syntax.
+
+```javascript
+AR.Resource.create('person', function(schema) {
+  schema.numeric('id');
+  schema.string('name');
+  schema.string('dob');
+  
+  return schema;
+});
+```
+
 ## Managing Resources
 
 You can iterate over a collection using any of the following methods.
