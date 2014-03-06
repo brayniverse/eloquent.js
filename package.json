@@ -1,0 +1,16 @@
+{
+  "name": "working title",
+  "version": "0.0.0",
+  "description": "Framework agnostic active record pattern implementation for JavaScript",
+  "author": "Christopher L Bray",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies: {
+    "grunt": "latest",
+    "grunt-ngmin": "latest",
+    "grunt-shell": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-uglify": "latest"
+  }
+}
