@@ -20,7 +20,7 @@ AR.Resource.create('products', function() {
   this.setEndpoint('http://localhost:8000/api/products');
 
   this.property('id', 'integer');
-  this.property('id', 'merchant_id');
+  this.property('merchant_id', 'integer');
   this.property('title', { type: 'string', default: '(untitled)' });
   this.property('description', 'string');
   this.property('price', 'number');
