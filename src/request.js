@@ -1,4 +1,4 @@
-// rq.js
+// request.js
 // A stupidly simple AJAX libray for asynchronous HTTP request management.
 
 // The library makes no assumptions regarding your data. You provide your data as you expect it
@@ -19,13 +19,20 @@
   'use strict';
   
   var request = function( url, options ) {
-    if ( url === undefined ) return;
-    if ( options === undefined ) options = {};
-    if ( options.method === undefined ) options.method = 'GET';
+    if ( url === undefined ) {
+      return;
+    }
+
+    if ( options === undefined ) {
+      options = {};
+    }
+
+    if ( options.method === undefined ) {
+      options.method = 'GET';
+    }
     
-    var req = (function() { // return the correct XHR object for the user agent
-      return new XMLHttpRequest(); // chrome
-    }());
+    // uses XMLHttpRequest.js object instead of native fro cross browser consistency
+    var req = new XMLHttpRequest();
     
     if ( options.success !== undefined ) {
       req.onload = function() {
@@ -38,6 +45,8 @@
         options.error( req );
       };
     }
+
+    req.open( options.method, url, false );
     
     if ( Object.prototype.toString.call( options.headers ) === '[object Object]' ) {
       for ( var key in options.headers ) {
