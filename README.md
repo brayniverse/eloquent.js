@@ -8,14 +8,6 @@ Extremely simple JavaScript implementation of the Active Record design pattern.
 Before you begin you must define your resources and the structure of a resource's model. Here is a quick example of how to do this:
 
 ```javascript
-eq('people', function() {
-  this.property('id', 'integer');
-  this.property('name', 'string');
-  this.property('dob', 'string');
-});
-```
-
-```javascript
 AR.Resource.create('products', function() {
   this.setEndpoint('http://localhost:8000/api/products');
 
