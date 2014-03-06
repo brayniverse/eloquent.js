@@ -1,6 +1,6 @@
 {
   "name": "working title",
-  "devDependencies": {
+  "dependencies": {
     "lodash": "latest"
   }
 }
