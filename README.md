@@ -15,6 +15,34 @@ eq('people', function() {
 });
 ```
 
+```javascript
+AR.Resource.create('products', function() {
+  this.setEndpoint('http://localhost:8000/api/products');
+
+  this.property('id', 'integer');
+  this.property('id', 'merchant_id');
+  this.property('title', { type: 'string', default: '(untitled)' });
+  this.property('description', 'string');
+  this.property('price', 'number');
+
+  this.property('salePrice', function(price) {
+    return price - (price * 0.2);
+  });
+
+  this.property('summary', function(title, description) {
+    return title + ' \n' + description;
+  });
+
+  this.property('merchant', function(merchant_id) {
+    return this.belongsTo('merchants', { id: merchant_id });
+  });
+
+  this.property('sales', function(id) {
+    return this.hasMany('sales', { product_id: id });
+  });
+});
+```
+
 ## Managing Resources
 
 You can iterate over a collection using any of the following methods.
