@@ -1,4 +1,4 @@
-active-record.js
+eloquent.js
 ================
 
 Extremely simple JavaScript implementation of the Active Record design pattern.
@@ -8,8 +8,9 @@ Extremely simple JavaScript implementation of the Active Record design pattern.
 Before you begin you must define your resources and the structure of a resource's model. Here is a quick example of how to do this:
 
 ```javascript
-AR.Resource.create('products', function() {
+Eloquent.Resource.create('products', function() {
   this.setEndpoint('http://localhost:8000/api/products');
+  this.setStorage('indexedDb');
 
   this.property('id', 'integer');
   this.property('merchant_id', 'integer');
@@ -44,7 +45,7 @@ You can iterate over a collection using any of the following methods.
 Will return the entire collection of resource instances.
 
 ```javascript
-eq('people').all();
+Eloquent('people').all();
 ```
 
 ### First
@@ -52,7 +53,7 @@ eq('people').all();
 Returns the first instance in the collection.
 
 ```javascript
-eq('people').first();
+Eloquent('people').first();
 ```
 
 ### Last
@@ -60,7 +61,7 @@ eq('people').first();
 Returns the last instance in the collection.
 
 ```javascript
-eq('people').last();
+Eloquent('people').last();
 ```
 
 ### Find
@@ -68,7 +69,7 @@ eq('people').last();
 Return a single resource based on a query object.
 
 ```javascript
-eq('people').find({id: 1});
+Eloquent('people').find({id: 1});
 ```
 
 ### Where
@@ -76,7 +77,7 @@ eq('people').find({id: 1});
 Return an array of instances based on a query object.
 
 ```javascript
-eq('people').where({id: 1});
+Eloquent('people').where({id: 1});
 ```
 
 ### Each
@@ -84,7 +85,7 @@ eq('people').where({id: 1});
 Manipulate each instance in the collection.
 
 ```javascript
-eq('people').each(function(person) {
+Eloquent('people').each(function(person) {
   person.walk();
 });
 ```
@@ -94,5 +95,5 @@ eq('people').each(function(person) {
 Return the total number of resources in the collection.
 
 ```javascript
-eq('people').total();
+Eloquent('people').total();
 ```
