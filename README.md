@@ -17,6 +17,8 @@ Eloquent.Resource.create('products', function() {
   this.property('title', { type: 'string', default: '(untitled)' });
   this.property('description', 'string');
   this.property('price', 'number');
+  this.property('created_at', 'timestamp');
+  this.property('updated_at', 'timestamp');
 
   this.property('salePrice', function(price) {
     return price - (price * 0.2);
