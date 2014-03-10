@@ -36,6 +36,10 @@ Eloquent.Resource.create('products', function() {
 });
 ```
 
+## Resource Flow
+
+Eloquent resources are represented either as a collection or a singular instance, if you were to query a collection you would receive another collection, this will wittle down until you either have no more resources or switch context.
+
 ## Managing Resources
 
 You can iterate over a collection using any of the following methods.
