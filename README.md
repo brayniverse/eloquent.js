@@ -11,6 +11,16 @@ Before you begin you must define your resources and the structure of a resource'
 Eloquent.Resource.create('products', function() {
   this.setEndpoint('http://localhost:8000/api/products');
   this.setStorage('indexedDb');
+  
+  this.before('GET', function(request) {
+    // manipulate request object, but don't forget to return it :)
+    return request;
+  });
+  
+  this.after('GET', function(response, request) {
+    // manipulate the response data before the model is instantiated, you also have
+    // access to the actual request object to view and conjest response headers.
+  });
 
   this.property('id', 'integer');
   this.property('merchant_id', 'integer');
