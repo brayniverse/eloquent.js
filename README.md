@@ -22,8 +22,8 @@ Eloquent.Resource.create('products', function() {
     return price - (price * 0.2);
   });
 
-  this.property('summary', function(title, description) {
-    return title + ' \n' + description;
+  this.property('summary', function(description) {
+    return description.substring(0, 15);
   });
 
   this.property('merchant', function(merchant_id) {
