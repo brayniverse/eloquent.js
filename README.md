@@ -13,7 +13,7 @@ Eloquent.Resource.create('products', function() {
   this.setStorage('indexedDb');
   
   // Request interceptors are also available for `GET`, `POST`, `PUT`, `DELETE`,
-  // `HEAd` and `OPTIONS` headers.
+  // `HEAD` and `OPTIONS` headers.
   this.before('GET', function(request) {
     // manipulate request object, but don't forget to return it :)
     return request;
