@@ -1,6 +1,8 @@
 {
-  "name": "working title",
+  "name": "Active Resource",
   "dependencies": {
-    "lodash": "latest"
+    "uxhr": "latest",
+    "lodash": "latest",
+    "ypromise": "latest"
   }
 }
