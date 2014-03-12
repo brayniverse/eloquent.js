@@ -1,14 +1,24 @@
 {
-  "name": "working title",
+  "name": "ActiveRecord",
   "version": "0.0.0",
-  "description": "Framework agnostic active record pattern implementation for JavaScript",
-  "author": "Christopher L Bray",
+  "description": "Framework agnostic Active Record JavaScript implementation.",
+  "author": "Christopher L Bray <chris@brayniverse.com>",
   "license": "MIT",
-  "dependencies": {},
-  "devDependencies: {
+  "dependencies": {
+    "uxhr": "latest",
+    "lodash": "latest",
+    "ypromise": "latest"
+  },
+  "devDependencies": {
+    "karma": "latest",
+    "karma-jasmine": "latest",
+    "karma-osx-reporter": "latest",
+    "karma-phantomjs-launcher": "latest",
+    
     "grunt": "latest",
     "grunt-ngmin": "latest",
     "grunt-shell": "latest",
+    "grunt-karma": "latest",
     "grunt-contrib-watch": "latest",
     "grunt-contrib-concat": "latest",
     "grunt-contrib-uglify": "latest"
