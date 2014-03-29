@@ -1,8 +1,3 @@
-eloquent.js
-================
-
-Extremely simple JavaScript implementation of the Active Record design pattern.
-
 ## Creating Resources
 
 Before you begin you must define your resources and the structure of a resource's model. Here is a quick example of how to do this:
