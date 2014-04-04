@@ -1,8 +1,4 @@
 {
-  "name": "Active Resource",
-  "dependencies": {
-    "uxhr": "latest",
-    "lodash": "latest",
-    "ypromise": "latest"
-  }
+  "name": "eloquent.js",
+  "dependencies": {}
 }
