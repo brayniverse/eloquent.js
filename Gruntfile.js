@@ -12,24 +12,21 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src: [
-          'bower_components/lodash/dist/lodash.min.js',
-          'bower_components/ypromise/promise.js',
-          'bower_components/uxhr/uxhr.min.js',
-          'src/eloquent/eloquent.js'
+          'src/**/*.js'
         ],
-        dest: 'dist/active-record.js'
+        dest: 'dist/eloquent.js'
       }
     },
     ngmin: {
       dist: {
-        src: ['dist/active-record.js'],
-        dest: 'dist/active-record.js'
+        src: ['dist/eloquent.js'],
+        dest: 'dist/eloquent.js'
       }
     },
     uglify: {
       dist: {
-        src: 'dist/active-record.js',
-        dest: 'dist/active-record.min.js'
+        src: 'dist/eloquent.js',
+        dest: 'dist/eloquent.min.js'
       }
     }
   });
