@@ -1,3 +1,3 @@
-# SPEC
+# SPECIFICATION
 
-The goal of this specification is to clearly define the goals and intent of eloquent.js by providing a lucid documentation of theories, ideas and explenations of functionality.
+The goal of this specification is to provide lucid documentation of eloquent.js so that others can easily understand the goals and current state of the project.
