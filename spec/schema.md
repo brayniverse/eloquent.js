@@ -10,6 +10,17 @@ The schema module is a factory object that accepts a callback as an argument tha
 new Schema(function() { /* ... */ });
 ```
 
+When creating a new Schema you must provide a endpoint URL. You can also optionally specify whether to sync the data locally using any of the supported caching systems, which will default to none.
+
+```javascript
+new Schmea(function() {
+  this.setEndpoint( 'http://localhost:8000/api/people' );
+  
+  // Optional caching system
+  this.setStorage( 'indexedDb' );
+});
+```
+
 ## Properties
 
 Using `this.property` you can tell the Schema about the data you will be providing a Model.
