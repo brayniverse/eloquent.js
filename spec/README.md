@@ -1,3 +1,7 @@
 # SPECIFICATION
 
-The goal of this specification is to provide lucid documentation of eloquent.js so that others can easily understand the goals and current state of the project.
+Welcome to the specification / docs.
+
+## Contents
+
+- [Introduction](/spec/introduction.md)
