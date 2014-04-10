@@ -1,3 +1,5 @@
+# Eloquent.js
+
 ## Schemas
 
 ```javascript
