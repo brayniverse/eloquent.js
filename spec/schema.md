@@ -60,10 +60,14 @@ To define a new event hook use the following syntax:
 ```javascript
 this.before( 'GET', function( request ) {
   // Manipulate request object before it is sent.
+  
+  return request;
 });
 
 this.after( 'GET', function( response, request ) {
   // Manipulate the raw response data before it is injested by an Eloquent Model.
+  
+  return response;
 });
 ```
 
