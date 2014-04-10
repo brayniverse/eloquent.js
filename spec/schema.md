@@ -20,11 +20,22 @@ this.property( 'id', 'integer' );
 
 This helper method accepts two arguments; the key and the formatter which can be either a string of a callback function. Providing a string indicates that you are using a built-in formatter (explained below).
 
+Using a callback as the second argument is known as a 'computed property' and will inject any value you return into the model's values. Computed properties have access to other properties by specifying them in the callback's arguments, as seen in the following example:
+
+```javascript
+this.property( 'price', 'float' );
+
+this.property( 'salePrice', function( price ) {
+  return price - ( price * 0.2 );
+});
+```
+
 
 ### Built-in Formatters
 
    name   | description
 --------- | ------------
 integer   | Formats the value using `parseInt`.
+float     | Returns a floating integer.
 string    | Returns the value as a string.
 timestamp | Will parse the value and return is as a formatted date.
