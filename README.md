@@ -1,6 +1,4 @@
-## Creating Resources
-
-Before you begin you must define your resources and the structure of a resource's model. Here is a quick example of how to do this:
+## Schemas
 
 ```javascript
 Eloquent.Resource.create('products', function() {
@@ -45,11 +43,7 @@ Eloquent.Resource.create('products', function() {
 });
 ```
 
-## Resource Flow
-
-Eloquent resources are represented either as a collection or a singular instance, if you were to query a collection you would receive another collection, this will wittle down until you either have no more resources or switch to a single instance context.
-
-## Managing Resources
+## Collection Methods
 
 You can iterate over a collection using any of the following methods.
 
