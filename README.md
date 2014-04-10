@@ -45,11 +45,9 @@ Eloquent.Resource.create('products', function() {
 
 ## Collection Methods
 
-You can iterate over a collection using any of the following methods.
-
 ### All
 
-Will return the entire collection of resource instances.
+Will return the entire collection of models.
 
 ```javascript
 Eloquent('people').all();
@@ -57,7 +55,7 @@ Eloquent('people').all();
 
 ### First
 
-Returns the first instance in the collection.
+Returns the first model in a collection.
 
 ```javascript
 Eloquent('people').first();
@@ -65,7 +63,7 @@ Eloquent('people').first();
 
 ### Last
 
-Returns the last instance in the collection.
+Returns the last model in a collection.
 
 ```javascript
 Eloquent('people').last();
@@ -73,7 +71,7 @@ Eloquent('people').last();
 
 ### Find
 
-Return a single resource based on a query object.
+Return a single model based on a query object.
 
 ```javascript
 Eloquent('people').find({id: 1});
@@ -81,7 +79,7 @@ Eloquent('people').find({id: 1});
 
 ### Where
 
-Return an array of instances based on a query object.
+Return an array of models based filtered by a query object.
 
 ```javascript
 Eloquent('people').where({id: 1});
@@ -89,7 +87,7 @@ Eloquent('people').where({id: 1});
 
 ### Each
 
-Manipulate each instance in the collection.
+Iterate over each model in a collection.
 
 ```javascript
 Eloquent('people').each(function(person) {
@@ -99,7 +97,7 @@ Eloquent('people').each(function(person) {
 
 ### Total
 
-Return the total number of resources in the collection.
+Return the total number of models in a collection.
 
 ```javascript
 Eloquent('people').total();
