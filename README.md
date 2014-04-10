@@ -1,7 +1,7 @@
 ## Schemas
 
 ```javascript
-Eloquent.Resource.create('products', function() {
+var Products = new Collection('products', new Schema(function() {
   this.setEndpoint('http://localhost:8000/api/products');
   this.setStorage('indexedDb');
   
@@ -40,7 +40,7 @@ Eloquent.Resource.create('products', function() {
   this.property('sales', function(id) {
     return this.hasMany('sales', { product_id: id });
   });
-});
+}));
 ```
 
 ## Collection Methods
