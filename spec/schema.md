@@ -41,7 +41,6 @@ this.property( 'salePrice', function( price ) {
 });
 ```
 
-
 ### Built-in Formatters
 
    name   | description
@@ -50,6 +49,27 @@ integer   | Formats the value using `parseInt`.
 float     | Returns a floating integer.
 string    | Returns the value as a string.
 timestamp | Will parse the value and return is as a formatted date.
+
+## Foreign Keys
+
+Foreign keys are similar to computed properties in the way they are defined. A computed property is provided with a couple factory methods that will help define relationships.
+
+First you define the key that the relationship will be accessed through, in the example below this is `merchant`, then you provide a callback function that can accept another property as an argument, again in the example below this is `merchant_id`, lastly you return one of the provided helper factory methods defined below.
+
+```javascript
+this.property( 'merchant', function( merchant_id ) {
+  return this.belongsTo( 'merchants', { id: merchant_id } );
+});
+```
+
+### Supported Relationships
+
+Name          | Use
+------------- | ---
+hasMany       | `this.hasMany( <foreign object>, { <foreign key>: <id value> } );`
+hasOne        | `this.hasOne( <foreign object>, { <foreign key>: <id value> } );`
+belongsTo     | `this.belongsTo( <foreign object>, { <foreign key>: <id value> } );`
+belongsToMany | `this.belongsToMany( <foreign object>, { <foreign key>: <id value> } );`
 
 ## Event Hooks
 
