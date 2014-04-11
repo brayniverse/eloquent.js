@@ -41,6 +41,16 @@ this.property( 'salePrice', function( price ) {
 });
 ```
 
+You can set default values for properties by using the following syntax:
+
+```javascript
+this.property( 'price', {
+  type: 'float',
+  default: '12.80'
+});
+```
+
+
 ### Built-in Formatters
 
    name   | description
