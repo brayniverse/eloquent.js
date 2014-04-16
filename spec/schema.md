@@ -81,20 +81,20 @@ hasOne        | `this.hasOne( <foreign object>, { <foreign key>: <id value> } );
 belongsTo     | `this.belongsTo( <foreign object>, { <foreign key>: <id value> } );`
 belongsToMany | `this.belongsToMany( <foreign object>, { <foreign key>: <id value> } );`
 
-## Event Hooks
+## Events
 
-You can intercept API requests with event hooks. This is particularly useful when using external endpoints where you need to format responses. You can intercept any of the following HTTP request headers `GET`, `POST`, `PUT`, `DELETE`, `HEAD` and `OPTIONS`
+Eloquent Schemas can intercept events related to model's and HTTP requests with `hooks`. This is particularly useful when using external API endpoints where you need to format responses before using them.
 
 To define a new event hook use the following syntax:
 
 ```javascript
-this.before( 'GET', function( request ) {
+this.before( 'http.get', function( request ) {
   // Manipulate request object before it is sent.
   
   return request;
 });
 
-this.after( 'GET', function( response, request ) {
+this.after( 'http.get', function( response, request ) {
   // Manipulate the raw response data before it is injested by an Eloquent Model.
   
   return response;
@@ -102,3 +102,25 @@ this.after( 'GET', function( response, request ) {
 ```
 
 > Don't forget to return the request for before hooks and the response for after hooks.
+
+The following events are available:
+
+### Model Events
+
+Namespace      | Description
+------------------- | ------------------------------------------------------
+`model.save`    | Fired when a model is created or updated.
+`model.create`  | Fired when creating a new model.
+`model.update` | Fired when updating an existing model.
+`model.delete`  | Fired when deleting an existing model.
+
+### HTTP Events
+
+Namespace      | Description
+------------------- | ------------------------------------------------------
+`http.get`           | Fired when making a GET request.
+`http.put`          | Fired when making a PUT request.
+`http.post`        | Fired when making a POST request.
+`http.delete`     | Fired when making a DELETE request.
+`http.options`   | Fired when making an OPTIONS request.
+`http.head`       | Fired when making a HEAD request.
