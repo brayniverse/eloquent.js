@@ -1,29 +1,54 @@
 # Schema
 
-The schema module provides a way to define Eloquent models.
+The Schema module is a factory object that is used to generate new Eloquent Models. They accept a callback as their only argument and inject functionality through the `this` keyword for defining endpoints, properties, event hooks and much more.
 
-## Creating a new Schema
+## Creating Schemas
 
-The schema module is a factory object that accepts a callback as an argument that is be injected with helper functions available through the `this` keyword.
+To create a new Schema you must first instantiate a `new` instance of the module like so:
 
 ```javascript
 new Schema(function() { /* ... */ });
 ```
 
-When creating a new Schema you must provide a endpoint URL. You can also optionally specify whether to sync the data locally using any of the supported caching systems, which will default to none.
+### Endpoints
+
+An endpoint is the URL that data is sent to and from. Eloquent makes the assumption that your endpoint adopts a RESTfull design, however, this is purely for convenience, if your endpoint does not then you can optionally provide a `object` which specifies each URL in use. This is particularly useful for those who have different endpoints for read/write activites.
 
 ```javascript
-new Schmea(function() {
-  this.setEndpoint( 'http://localhost:8000/api/people' );
-  
-  // Optional caching system
-  this.setStorage( 'indexedDb' );
+this.setEndpoint( 'http://localhost:8000/api/people' );
+// or
+this.setEndpoint({
+  list:   'http://localhost:8000/api/people',
+  create: 'http://localhost:8888/api/people'
 });
 ```
 
-## Properties
+If your model uses something other than `id` as an identifier for your data then in your URL configuration you can specify which index to use, like so:
 
-Using `this.property` you can tell the Schema about the data you will be providing a Model.
+```javascript
+this.setEndpoint({
+  list:   'http://localhost:8000/api/people',
+  create: 'http://localhost:8888/api/people',
+  show:   'http://localhost:8000/api/people/{username}' // Note the braces, this is used to find and replace the value
+});
+```
+
+### Local Storage
+
+You can specify whether or not you wish to cache the data for a period of time before retrieving it from the endpoint.
+
+```javascript
+this.setStorage({
+  driver: 'indexedDb', // array, indexedDb or local
+  duration: 3600,      // seconds
+  on: [ 'list', 'show' ]
+});
+```
+Note: If the browser does not support the chosen driver then it will request it directly from the endpoint every time.
+
+### Properties
+
+When defining properties you are telling the Schema what to do when it finds the specified object path in the response body. If will format the value before turning the request into a Model. You define properties using `this.property` as demonstrated in the following example.
 
 ```javascript
 this.property( 'id', 'integer' );
