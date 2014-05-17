@@ -1,23 +1,5 @@
-## Welcome
+## What is Eloquent?
 
-This document will explain what eloquent.js is and provide a simple description of how it works.
+Eloquent.js is a framework agnostic data management library written in JavaScript that aims to simplify synchronizing data between clients and servers. It does so by providing a unified API for retrieving data from any HTTP endpoint (URL) while offering complete control over the request and response objects.
 
-### What is Eloquent?
-
-Eloquent is a framework agnostic data management library written in JavaScript that aims to simplify syncing between online and offline states. The library takes inspiration from Active Record in how you can define relationships between datasets.
-
-### How does Eloquent work?
-
-Eloquent has three core parts to it:
-
-#### 1: The Schema module
-
-This module is used to describe data models and define foreign keys, similar to how the schema works in Laravel.
-
-#### 2: The Collection module
-
-This module provides functionality to sort, filter and manipulate sets of Models.
-
-#### 3: The Models
-
-Models are decorated versions of the underlying data. Thanks to the Schema module you can format and add new model attributes.
+Eloquent.js draws inspiration from some of the best most expressive data/ORM projects such as [Active Record](http://en.wikipedia.org/wiki/Active_record_pattern), [Laravel's Eloquent](http://laravel.com/docs/eloquent), [Ember Data](https://github.com/emberjs/data) and [ngActiveResource](https://github.com/FacultyCreative/ngActiveResource).
