@@ -51,6 +51,8 @@ function Schema(config) {
     }
   };
 
+  support.setStorage = function(config) {};
+
   // Property
   // Adds a new path transformer for the incoming data.
   // ```
@@ -86,12 +88,38 @@ function Schema(config) {
     }
   };
 
-  support.setStorage = function(config) {};
   support.belongsTo = function(key, config) {};
   support.hasMany = function(key, config) {};
   support.hasOne = function(key, config) {};
   support.belongsToMany = function(key, config) {};
+
+  // Before
+  // Allows for functions to be triggered before particular events occur on a
+  // model.
+  // ```
+  // this.before('model.save', function(model) {
+  //   model.updated_at = (new Date()).toTimestamp();
+  //   return model;
+  // });
+  // this.before('http.post', function(request) {
+  //   request.header['Access-Control-Allow-Access'] = '*';
+  //   return request;
+  // });
+  // ```
   support.before = function(event, callback) {};
+
+  // After
+  // Allows for functions to be triggered after particular events occur on a
+  // model.
+  // ```
+  // this.after('model.create', function(model) {
+  //   if (model.valid === true) {
+  //     alert('Model successfully created');
+  //   } else {
+  //     alert('Unexpected error whilst saving model');
+  //   }
+  // });
+  // ```
   support.after = function(event, callback) {};
 
   config.call( support );
