@@ -1,6 +1,6 @@
 # Schema
 
-The Schema module is a factory object that is used to generate new Eloquent Models. They accept a callback as their only argument and inject functionality through the `this` keyword for defining endpoints, properties, event hooks and much more.
+The Schema module is a factory object used to generate new Models. They accept a callback as their only argument and inject functionality through the `this` keyword for defining endpoints, properties, event hooks and much more.
 
 ## Creating Schemas
 
