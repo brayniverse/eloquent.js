@@ -1,19 +1,22 @@
 function Schema(config) {
+  var support = {}, model = {};
+
+  model.valid = true;
+
   if (typeof config !== 'function') {
     console.error('Invalid callback format!');
     console.error('%s provided when expecting a function.', typeof config);
-    valid = false;
+    model.valid = false;
   }
 
-  var valid = true,
+  // The support object is used to inject functionality into the `config`
+  // variable so that the user can build their model.
+  support = {};
 
-    // The support object is used to inject functionality into the `config`
-    // variable so that the user can build their model.
-    support = {},
-
-    // This is the model object that will be built and returned once the
-    // Schema factory has finished executing.
-    model   = { endpoint: {}, properties: {} };
+  // This is the model object that will be built and returned once the Schema
+  // factory has finished executing.
+  model.endpoint   = {};
+  model.properties = {};
 
   // Set Endpoint
   // A user can define HTTP endpoints using either by providing the URL as a
@@ -44,7 +47,7 @@ function Schema(config) {
             console.info('You are missing the %s URL', key);
           }
         }, this);
-        valid = false;
+        model.valid = false;
       }
 
       model.endpoint = endpoint;
@@ -64,9 +67,9 @@ function Schema(config) {
   // });
   // ```
   support.setProperty = function(key, config) {
-    if (typeof key === undefined) {
+    if (typeof key === 'undefined') {
       console.error('You are missing a property key!');
-      valid = false;
+      model.valid = false;
     }
 
     if (typeof config === 'string') {
@@ -122,9 +125,9 @@ function Schema(config) {
   // ```
   support.after = function(event, callback) {};
 
-  config.call( support );
-
-  if (valid === true) {
-    return model;
+  if (config !== undefined) {
+    config.call( support );
   }
+
+  return model;
 }
