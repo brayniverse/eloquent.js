@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Eloquent.js Testing Suite</title>
+    <link rel="stylesheet" type="text/css" href="node_modules/mocha/mocha.css">
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <script type="text/javascript" src="build/eloquent.min.js"></script>
+    <script type="text/javascript" src="node_modules/mocha/mocha.js"></script>
+    <script type="text/javascript" src="node_modules/expect.js/index.js"></script>
+    <script type="text/javascript">mocha.setup('bdd');</script>
+    <script type="text/javascript" src="tests/schema.js"></script>
+    <script type="text/javascript">
+      mocha.checkLeaks();
+      mocha.run();
+    </script>
+  </body>
+</html>

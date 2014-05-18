@@ -1,0 +1,32 @@
+{
+  "name"            : "Eloquent.js",
+  "title"           : "Eloquent.js",
+  "version"         : "0.0.0",
+  "description"     : "Elegant syntax for defining and managing data in JavaScript.",
+  "license"         : "MIT",
+  "keywords"        : ["data", "orm", "javascript", "api"],
+  "homepage"        : "https://brayniverse.github.io/eloquent.js",
+  "maintainers"     : [
+    { "name": "Christopher L Bray", "email": "chris@brayniverse" }
+  ],
+  "repositories"    : [
+    { "type": "git", "url": "https://github.com/brayniverse/eloquent.js" }
+  ],
+  "bugs"            : "https://github.com/brayniverse/eloquent.js/issues",
+  "scripts"         : {
+    "test": "make test"
+  },
+  "dependencies"    : {},
+  "devDependencies" : {
+    "grunt"                    : "latest",
+    "mocha"                    : "latest",
+    "expect.js"                : "latest",
+    "grunt-shell"              : "latest",
+    "load-grunt-tasks"         : "latest",
+    "grunt-contrib-watch"      : "latest",
+    "grunt-contrib-jshint"     : "latest",
+    "grunt-contrib-concat"     : "latest",
+    "grunt-contrib-uglify"     : "latest",
+    "grunt-contrib-jasmine"    : "latest"
+  }
+}
