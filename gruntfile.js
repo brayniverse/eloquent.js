@@ -36,7 +36,7 @@ module.exports = function( grunt ) {
   grunt.registerTask( 'default', [ 'watch', 'concat', 'uglify' ] );
   
   // Deploy Task
-  // This will build 
+  // This will build a new compiled file, but first it verifies whether any syntax errors exist in the source.
   grunt.registerTask( 'deploy', [ 'jshint', 'concat', 'uglify', 'zip' ] );
 
 };
